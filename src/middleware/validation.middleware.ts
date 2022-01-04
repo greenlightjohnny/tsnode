@@ -47,3 +47,20 @@ const valMid = (schema: Joi.Schema) => {
         } catch (error) {}
     };
 };
+
+const valMid2 = (schema: Joi.Schema) => {
+    const myRes = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> => {
+        const validationoptions = {
+            abortEarly: false,
+            allowUnknown: true,
+            stripUnknown: true,
+        };
+        try {
+            const value = await schema.validateAsync;
+        } catch (error) {}
+    };
+};
